@@ -6,9 +6,13 @@ verifies its own work. This plugin teaches you to use it **well**: eight short
 interactive lessons, in your own project, with a running emphasis on not wasting
 tokens (your organization pays for them).
 
-## Install (3 steps, ~3 minutes)
+## Install (4 steps, ~5 minutes)
 
-**1. Install Claude Code** (skip if you have it — check with `claude --version`):
+Every command below is typed into a **terminal**. Mac: press `Cmd+Space`, type
+`Terminal`, press Enter. Windows: Start menu → type `PowerShell` → Enter.
+
+**1. Install Claude Code** — copy-paste ONE of these (match your machine) and
+press Enter:
 
 ```bash
 # macOS / Linux / WSL
@@ -20,31 +24,56 @@ curl -fsSL https://claude.ai/install.sh | bash
 irm https://claude.ai/install.ps1 | iex
 ```
 
-**2. Sign in.** Open a terminal **in a project you work on** and run:
+✅ **Check it worked:** close the terminal, open a new one, type `claude --version`.
+You should see a version number. If you see "command not found", opening a fresh
+terminal window usually fixes it; if not, run `claude doctor` or see the
+[setup docs](https://code.claude.com/docs/en/setup).
+
+**2. Go to a project.** In the terminal, `cd` into a code project you actually work
+on — the tour teaches best on your real code:
+
+```bash
+cd path/to/your/project
+```
+
+(No project handy? Any empty folder works — the tour will offer to generate a tiny
+practice project.)
+
+**3. Start Claude Code and sign in.** Type:
 
 ```bash
 claude
 ```
 
-On first run it walks you through login — use your **company Claude account**
-(Console/SSO) when prompted. Ask your team lead if you're not sure which option
-applies.
+First run opens your browser to log in — choose your **company Claude account**
+(Console/SSO) when prompted; ask your team lead if you're unsure which option is
+yours. ✅ **Check it worked:** you're back in the terminal looking at a chat-style
+input box.
 
-**3. Install this plugin.** Inside the Claude Code session, type:
+**4. Install this plugin.** You're now *inside* Claude Code — everything from here
+is typed into that input box at the bottom, like a chat message. Type each line and
+press Enter (approve the confirmation prompts):
 
 ```
 /plugin marketplace add <your-github-username>/claude-code-kickstart
+```
+
+```
 /plugin install kickstart@claude-code-kickstart
 ```
 
 <!-- PUBLISH NOTE: replace <your-github-username> above (and in PRESENTATION.md)
      with the actual GitHub owner before making this repo public. -->
 
-Then start the tour:
+✅ **Check it worked:** type `/kickstart` — the input box should suggest the
+kickstart commands. Then start the tour:
 
 ```
 /kickstart:tour
 ```
+
+From here the tour drives: one step at a time, it tells you exactly what to type
+and what you should see. You can stop anytime and resume later.
 
 ## What you get
 
@@ -65,7 +94,7 @@ don't have one handy, the tour offers to generate a tiny practice project.
 
 **How much will the tour itself cost?** The plugin is static text — installed but
 idle it adds ~240 tokens to a session (measured with `claude plugin details
-kickstart`), and the tour's instructions are ~3.6k tokens loaded only when you invoke
+kickstart`), and the tour's instructions are ~6k tokens loaded only when you invoke
 it. A full eight-lesson run is a normal interactive session — typically
 on the order of a few hundred thousand tokens (single-digit dollars) depending on
 your project and how deep you go. Lesson 4 alone, applied for a week, pays that back.
