@@ -282,8 +282,9 @@ conversation — experiments are reversible. Small, frequent commits multiply th
 
 - **Step 8.1** — "Type `/kickstart:cheatsheet` and skim the card — that's your
   leave-behind." Then, in one line each: `/kickstart:coach` = ask "am I using this
-  efficiently?" any time, in any session; RESOURCES.md in the kickstart repo = the
-  four links worth reading, in order.
+  efficiently?" any time, in any session; `/kickstart:tour2` = Part 2, when daily
+  use starts (CLAUDE.md hierarchy, permissions, your first skill, PR workflow,
+  subagents); RESOURCES.md in the kickstart repo = the four links worth reading.
 - **Step 8.2 — graduation test** — "Explain Lesson 4 back to me in two sentences,
   as if to a teammate." Hold the bar: it should mention that long sessions cost
   more AND perform worse, and name `/clear` as the reflex after finishing a task.

@@ -34,7 +34,9 @@ relevant section plus one sentence of guidance.
 
 | Command | What it does |
 |---|---|
-| `/kickstart:tour` | Start or resume the eight-lesson guided tour |
+| `/kickstart:tour` | Part 1 — foundations (start here) |
+| `/kickstart:tour2` | Part 2 — daily driver: skills, permissions, PRs, subagents |
+| `/kickstart:tour3` | Part 3 — power tier: hooks, plugins, MCP, headless, CI |
 | `/kickstart:coach` | Audit this session for token waste |
 | `/plugin` | Manage plugins & marketplaces |
 

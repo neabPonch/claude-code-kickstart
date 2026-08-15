@@ -1,8 +1,8 @@
 {
   "name": "kickstart",
   "displayName": "Claude Code Kickstart",
-  "description": "Learn Claude Code by using it: /kickstart:tour walks you through eight short hands-on lessons in your own project, /kickstart:coach audits your session for wasted tokens, /kickstart:cheatsheet is the quick reference.",
-  "version": "0.1.0",
+  "description": "Learn Claude Code by using it: three guided walkthroughs (/kickstart:tour foundations, /kickstart:tour2 daily driver, /kickstart:tour3 power tier) scripted step-by-step in your own project, plus /kickstart:coach session audits and /kickstart:cheatsheet.",
+  "version": "0.2.0",
   "author": {
     "name": "Rishi Wadhera"
   },

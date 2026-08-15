@@ -57,7 +57,9 @@ install live yourself; the audience does it after, from the slide and the record
   practice one?" beat sells the whole thing in 20 seconds.
 - The pitch, verbatim if you like: "This is an eight-lesson guided tour that runs in
   *your* project and adapts to *you*. Do one lesson with your coffee each morning;
-  it saves your place. It will not let you skip the cost lesson."
+  it saves your place. It will not let you skip the cost lesson. And when you outgrow
+  it, Parts 2 and 3 are already installed — same plugin takes you from first session
+  to building your team's own hooks, plugins, and CI automation."
 
 ### 8:30–10:00 — Resources + close
 

@@ -8,8 +8,8 @@
     {
       "name": "kickstart",
       "source": "./",
-      "description": "Guided hands-on onboarding for new Claude Code users: an interactive eight-lesson tour in your own project, an efficiency coach, and a command cheatsheet.",
-      "version": "0.1.0"
+      "description": "Guided hands-on onboarding for Claude Code: three scripted walkthroughs (foundations, daily driver, power tier) in your own project, an efficiency coach, and a command cheatsheet.",
+      "version": "0.2.0"
     }
   ]
 }

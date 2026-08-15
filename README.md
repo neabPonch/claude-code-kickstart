@@ -79,13 +79,15 @@ and what you should see. You can stop anytime and resume later.
 
 | Command | What it does |
 |---|---|
-| `/kickstart:tour` | The guided tour: 8 lessons × ~5 minutes, in your own project. Stop anytime; it resumes where you left off. |
+| `/kickstart:tour` | **Part 1 — foundations** (start here): agent vs chatbot, CLAUDE.md, plan mode, **context & cost hygiene** (the unskippable lesson), verification, model right-sizing, checkpoints. |
+| `/kickstart:tour2` | **Part 2 — daily driver**: CLAUDE.md hierarchy, memory, permission policy, authoring your first skill, branch/PR workflow, subagents, multi-session work. |
+| `/kickstart:tour3` | **Part 3 — power tier**: hooks, custom subagents, building your own plugin, MCP, headless automation, CI, team cost governance. |
 | `/kickstart:coach` | Ask anytime "am I using this efficiently?" — audits your current session and gives concrete fixes. |
 | `/kickstart:cheatsheet` | The quick-reference card: session commands, modes, and the five cost commandments. |
 
-The tour covers: working with an agent instead of a chatbot, `CLAUDE.md`, plan mode,
-**context & cost hygiene** (the unskippable lesson), verification-driven requests,
-model/effort right-sizing, checkpoints & git, and where to go next.
+Each part is ~8 lessons × ~5 minutes, scripted step-by-step in your own project;
+stop anytime, resume anytime. [CURRICULUM.md](CURRICULUM.md) maps every Claude Code
+capability to the lesson that teaches it.
 
 ## FAQ
 
@@ -93,9 +95,9 @@ model/effort right-sizing, checkpoints & git, and where to go next.
 don't have one handy, the tour offers to generate a tiny practice project.
 
 **How much will the tour itself cost?** The plugin is static text — installed but
-idle it adds ~240 tokens to a session (measured with `claude plugin details
-kickstart`), and the tour's instructions are ~6k tokens loaded only when you invoke
-it. A full eight-lesson run is a normal interactive session — typically
+idle it adds ~440 tokens to a session (measured with `claude plugin details
+kickstart`), and each tour part's instructions are ~4–6k tokens loaded only when
+you invoke it. A full eight-lesson run is a normal interactive session — typically
 on the order of a few hundred thousand tokens (single-digit dollars) depending on
 your project and how deep you go. Lesson 4 alone, applied for a week, pays that back.
 
