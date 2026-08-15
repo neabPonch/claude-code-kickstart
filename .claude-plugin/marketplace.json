@@ -1,0 +1,15 @@
+{
+  "name": "claude-code-kickstart",
+  "description": "Onboarding marketplace for new Claude Code users: install the kickstart plugin and run /kickstart:tour for a guided, cost-conscious introduction in your own project.",
+  "owner": {
+    "name": "Rishi Wadhera"
+  },
+  "plugins": [
+    {
+      "name": "kickstart",
+      "source": "./",
+      "description": "Guided hands-on onboarding for new Claude Code users: an interactive eight-lesson tour in your own project, an efficiency coach, and a command cheatsheet.",
+      "version": "0.1.0"
+    }
+  ]
+}
