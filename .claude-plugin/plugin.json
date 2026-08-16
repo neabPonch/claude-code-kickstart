@@ -2,10 +2,16 @@
   "name": "kickstart",
   "displayName": "Claude Code Kickstart",
   "description": "Learn Claude Code by using it: three guided walkthroughs (/kickstart:tour foundations, /kickstart:tour2 daily driver, /kickstart:tour3 power tier) scripted step-by-step in your own project, plus /kickstart:coach session audits and /kickstart:cheatsheet.",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": {
     "name": "Rishi Wadhera"
   },
   "license": "MIT",
-  "keywords": ["onboarding", "tutorial", "learning", "efficiency", "getting-started"]
+  "keywords": [
+    "onboarding",
+    "tutorial",
+    "learning",
+    "efficiency",
+    "getting-started"
+  ]
 }

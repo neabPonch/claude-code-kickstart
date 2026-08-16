@@ -24,6 +24,7 @@ relevant section plus one sentence of guidance.
 | Command / key | What it does |
 |---|---|
 | **Shift+Tab** | Cycle permission modes — plan mode = explore & propose before touching anything |
+| ⚠ auto-accept / auto mode | Only for mechanical work on a **clean branch** with a **verification target**. While learning: manually approve, always. |
 | `/model` | Switch model (big model for gnarly work, cheap for mechanical) |
 | `/effort` | Reasoning depth: low for boilerplate, high for hard problems |
 | `/init` | Generate the project's CLAUDE.md (then trim it — every line is a per-session tax) |

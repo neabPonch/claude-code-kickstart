@@ -101,8 +101,15 @@ auto, accept-edits) set the posture per session risk.
   default = normal work; accept-edits = mechanical batch in a clean branch;
   auto = unattended/low-risk. One question each: "what session would you run in
   accept-edits?"
+- **Step 3.4 — the pitfalls, named.** ≤6 lines, responsible-use, not fine print:
+  accept-edits with uncommitted work in the tree = changes you didn't read mixed
+  into changes you can't cleanly undo. Auto mode also auto-approves *commands*,
+  not just edits — so it's only as safe as your deny rules (Step 3.2) and should
+  never run anywhere with production access or real credentials. The tell that
+  you've over-automated: you can't say what the last three approvals were.
 - **Check** — "Why is a deny rule on force-push better than promising yourself
-  you'll read every prompt carefully?"
+  you'll read every prompt carefully? And what two things must be true before you
+  flip a session to accept-edits?" (Clean branch; a verification target.)
 - **Cost note** — Attention is a budget too; spend prompts only on decisions that
   are actually new.
 

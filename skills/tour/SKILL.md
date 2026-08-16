@@ -76,7 +76,9 @@ Track progress in `.kickstart-progress.md` in the project root.
 
 ```markdown
 # Claude Code Kickstart — progress
-Learner level: <their words> | Project: <path>
+Role: <engineer|analyst|operator|other: their words>
+Comfort — code: <daily|sometimes|rarely> | terminal: <at home|shaky|new> | git: <use it|heard of it|no>
+AI tools before: <yes|no> | Goal: <their words> | Project: <path>
 - [x] 1. Agent, not chatbot — <takeaway>
 - [ ] 2. Give it a home (CLAUDE.md)
 - [ ] 3. Plan before you build
@@ -89,20 +91,63 @@ Learner level: <their words> | Project: <path>
 
 ## Session Zero (first run only)
 
-**Step 0.1** — Greet in ≤6 lines. Ask exactly two questions: (a) "Have you used
-Claude Code or another AI coding tool before — total beginner, dabbled, or
-experienced?" (b) Look at the current directory yourself (one `ls`, nothing deeper)
-and say what you see: "We're in `<dir>`, which looks like <one clause>. Should we do
-the tour here, or should I create a tiny practice project instead?"
+**Step 0.1 — intake.** Greet in ≤3 lines, then ask ALL of these in ONE message as
+a lettered list they can answer in shorthand ("1b 2a 3c…"). No other questions.
 
-**Step 0.2** — If they want the practice project: create `kickstart-practice/` in
-the current directory — a Python mini-app, ~4 files, under 100 lines total: a small
-module, a second module with ONE planted off-by-one bug, a `test_*.py` where one
-test fails because of that bug (runnable with plain `python3 -m pytest` or, if
-pytest is unavailable, a `run_tests.py` using stdlib `unittest`), and a 3-line
-README. Tell them in one line what you made; do NOT reveal the bug.
+1. What's your job, roughly? (a) engineer — I write code (b) analyst — I work
+   with data, SQL, or notebooks (c) operator — I run processes, reports, or
+   systems, code isn't my main job (d) something else — tell me
+2. How often do you write code? (a) daily (b) sometimes (c) rarely/never
+3. The terminal: (a) at home there (b) can copy-paste commands (c) new to me
+4. Git/version control: (a) use it (b) heard of it (c) no
+5. Used an AI coding tool before? (a) yes (b) no
+6. In one line: what do you most want Claude Code to do for you?
 
-**Step 0.3** — Create the progress file, then start Lesson 1.
+**Step 0.2 — project.** Look at the current directory yourself (one `ls`, nothing
+deeper) and say what you see: "We're in `<dir>`, which looks like <one clause>.
+Should we do the tour here, or should I create a small practice project that fits
+your work?" Their real work beats the practice project when both are options.
+
+**Step 0.3 — practice project (if wanted).** Create `kickstart-practice/` in the
+current directory, matched to their role, ~4 files and under 100 lines total, with
+ONE planted bug and a check that fails because of it (`run_checks.py` on stdlib
+only — don't assume pytest). Tell them in one line what you made; never reveal
+the bug.
+
+- **Engineer** → a Python mini-app: small module + second module with an
+  off-by-one + a failing test.
+- **Analyst** → a data project: a ~30-row CSV + an analysis script whose summary
+  numbers are wrong because one aggregation mis-groups + a check script that
+  compares against known totals.
+- **Operator** → an automation project: a folder of messily-named files (dates in
+  three formats) + an organizing/report script that mis-sorts one format + a
+  check script that verifies the expected layout.
+
+**Step 0.4** — Create the progress file with the full profile, then start Lesson 1.
+
+## Adapting to their profile
+
+Re-read the profile whenever you resume. It changes the **examples and language,
+never the habits** — all eight lessons run for everyone, in order.
+
+- **Engineer** — the script as written below.
+- **Analyst** — "codebase" means their data + scripts + notebooks. Lesson 1
+  questions target data files ("what does this script compute?", "which columns
+  does the report actually use?"). Lesson 5's verification target is a
+  reconciliation ("done when the totals match the check file"), which is their
+  native idea of correctness — say so.
+- **Operator** — plain language throughout: every term of art (repo, diff, commit)
+  gets a five-word gloss the first time. Lesson 1 targets files and processes
+  ("what does this script do to these folders?"). Lesson 5's target is observable
+  output ("done when the report lists all 12 files"). Lesson 7 runs the lite
+  variant: you `git init` for them, explain it as "snapshots we can return to,"
+  make one commit together, and skip nothing else.
+- **Comfort dials** (stack with role): terminal = new → every single step repeats
+  where to type and what Enter does; never assume they know Esc closes a picker.
+  git = no → Lesson 7 lite variant regardless of role. code = rarely → prefer
+  their real documents/data over code examples wherever a lesson allows it.
+- Whatever the profile: check-questions stay, Lesson 4 stays unskippable, and the
+  bar for "explained it back" stays.
 
 ## Lesson 1 — It's an agent, not a chatbot
 
@@ -173,14 +218,25 @@ Redirecting a plan costs cents; redirecting written code costs the code twice.
   ```
 - **Step 3.4** — Produce a short honest plan. Then teach the two questions to ask of
   ANY plan: (1) does it touch only the files you'd expect? (2) does it say how it
-  verifies itself? Have them answer both about your plan, then approve it via the
-  prompt on screen. Implement.
-- **Step 3.5** — "Press **Shift+Tab** until the label is back to normal mode, and
+  verifies itself? Have them answer both about your plan. THEN, before they touch
+  the approval prompt, warn them about it: "When you approve, it will also ask HOW
+  to proceed — something like **auto-accept edits** vs **manually approve edits**.
+  Pick **manually approve**. Auto-accept means my changes land without you reading
+  them — I'll tell you in a minute when that's ever okay." They approve; implement;
+  they accept each edit by hand this once.
+- **Step 3.5 — responsible use of the auto options.** ≤6 lines: auto-accept (and
+  the broader auto mode) trade YOUR review for speed. That trade is safe only when
+  all three hold: the work is mechanical, you're on a clean branch with nothing
+  uncommitted to lose, and there's a verification target that will catch mistakes.
+  None of the three → manually approve. While you're learning → manually approve,
+  always; speed you don't understand yet isn't speed.
+- **Step 3.6** — "Press **Shift+Tab** until the label is back to normal mode, and
   tell me when it is."
-- **Check** — "When would you NOT bother with plan mode?" (Fine: trivial, obvious,
-  single-file changes.)
+- **Check** — "When would you NOT bother with plan mode? And when is auto-accept
+  actually fine?" (Fine: trivial obvious changes; mechanical work + clean branch +
+  a check that would catch mistakes.)
 - **Cost note** — The cheapest moment to catch a wrong direction is before any code
-  exists.
+  exists — and unreviewed edits are how wrong directions compound silently.
 
 ## Lesson 4 — Context is the meter that's always running  ⚠ NEVER SKIP
 

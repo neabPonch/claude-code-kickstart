@@ -91,8 +91,14 @@ capability to the lesson that teaches it.
 
 ## FAQ
 
+**I'm not an engineer — is this for me?** Yes. The tour starts with a short intake
+(your role, how comfortable you are with code, the terminal, and git) and adapts:
+analysts get data-and-SQL-flavored examples, operators get file-and-report
+automation, and nothing assumes prior terminal or git knowledge.
+
 **Do I need a project?** A real one you know is best — the tour adapts to it. If you
-don't have one handy, the tour offers to generate a tiny practice project.
+don't have one handy, the tour generates a practice project matched to your role
+(a mini-app, a data analysis, or a file-automation task).
 
 **How much will the tour itself cost?** The plugin is static text — installed but
 idle it adds ~440 tokens to a session (measured with `claude plugin details

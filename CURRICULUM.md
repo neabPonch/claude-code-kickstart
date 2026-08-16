@@ -13,9 +13,11 @@ in your own project, all resumable (`.kickstart-progress.md`):
 
 | Capability | Where |
 |---|---|
+| Role-based intake (engineer / analyst / operator + code, terminal, git comfort) | Part 1, Session Zero — shapes examples in every lesson |
 | The agent model (reads files, runs commands — point, don't paste) | Part 1, L1 |
 | CLAUDE.md basics (`/init`, trimming, the token tax) | Part 1, L2 |
 | Plan mode (Shift+Tab, reading plans critically) | Part 1, L3 |
+| Responsible use of auto-accept / auto modes (when review may be traded for speed) | Part 1, L3 + Part 2, L3 |
 | Context & cost hygiene (`/context` `/usage` `/clear` `/compact`) | Part 1, L4 — unskippable |
 | Verification targets ("done when…", agent runs its own checks) | Part 1, L5 |
 | Model & effort right-sizing (`/model` `/effort`) | Part 1, L6 + Part 3, L7 |
