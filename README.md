@@ -55,15 +55,12 @@ is typed into that input box at the bottom, like a chat message. Type each line 
 press Enter (approve the confirmation prompts):
 
 ```
-/plugin marketplace add <your-github-username>/claude-code-kickstart
+/plugin marketplace add neabPonch/claude-code-kickstart
 ```
 
 ```
 /plugin install kickstart@claude-code-kickstart
 ```
-
-<!-- PUBLISH NOTE: replace <your-github-username> above (and in PRESENTATION.md)
-     with the actual GitHub owner before making this repo public. -->
 
 ✅ **Check it worked:** type `/kickstart` — the input box should suggest the
 kickstart commands. Then start the tour:

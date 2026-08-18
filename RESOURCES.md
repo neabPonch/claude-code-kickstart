@@ -18,4 +18,4 @@ All official, all current (verified August 2026). In reading order:
 1. Quickstart — code.claude.com/docs/en/quickstart
 2. Best practices — code.claude.com/docs/en/best-practices
 3. Managing costs — code.claude.com/docs/en/costs
-4. This plugin — github.com/&lt;your-github-username&gt;/claude-code-kickstart → `/kickstart:tour`
+4. This plugin — github.com/neabPonch/claude-code-kickstart → `/kickstart:tour`

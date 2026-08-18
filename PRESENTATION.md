@@ -12,8 +12,8 @@ the difference between a force multiplier and a money fire.**
       demo beats once end-to-end the night before AND record that run as the
       **fallback clip** (conference wifi + live LLM = plan for failure).
 - [ ] Terminal font huge (24pt+), light-on-dark, prompt shortened.
-- [ ] Plugin published: repo public, `<your-github-username>` placeholders in
-      README/RESOURCES replaced, install flow re-tested from a clean machine.
+- [ ] Plugin published: repo public at github.com/neabPonch/claude-code-kickstart,
+      install flow re-tested from a clean machine.
 - [ ] `/clear` run right before walking on stage (start from an empty session).
 - [ ] Slides: install slide (3 commands), resources slide (from RESOURCES.md), five
       cost commandments slide (from the cheatsheet skill).
@@ -51,7 +51,7 @@ install live yourself; the audience does it after, from the slide and the record
 ### 6:30–8:30 — The kickstart plugin (install shown live, done later)
 
 - Install slide up. Type, live:
-  `/plugin marketplace add <your-github-username>/claude-code-kickstart`
+  `/plugin marketplace add neabPonch/claude-code-kickstart`
   `/plugin install kickstart@claude-code-kickstart`
 - Run `/kickstart:tour` and let it play its opening — the greet + "your project or a
   practice one?" beat sells the whole thing in 20 seconds.
