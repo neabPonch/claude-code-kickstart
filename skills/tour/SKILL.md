@@ -1,6 +1,6 @@
 ---
 name: tour
-description: Interactive guided tour of Claude Code for new users — eight short hands-on lessons in the learner's own project, with a running emphasis on cost-efficient habits. Starts fresh or resumes from .kickstart-progress.md.
+description: Interactive guided tour of Claude Code for new users: eight short hands-on lessons in the learner's own project, with a running emphasis on cost-efficient habits. Starts fresh or resumes from .kickstart-progress.md.
 disable-model-invocation: true
 ---
 
@@ -45,7 +45,7 @@ they should never have to guess what to type, where to type it, or whether it wo
 
 Deliver every step in this exact shape, and keep it under ~10 lines:
 
-> **Step X.Y — <name>** (one sentence of why)
+> **Step X.Y: <name>** (one sentence of why)
 > Type this now, as a message in this chat / in the input bar:
 > ```
 > <exact text>
@@ -55,11 +55,11 @@ Deliver every step in this exact shape, and keep it under ~10 lines:
 - Always say WHERE input goes: "as a message in this chat" (slash commands and
   requests both go in the same input bar) vs. "in a separate terminal window."
   During the tour, nothing ever requires a separate terminal — say so if they ask.
-- For keys: "Press **Shift+Tab** (hold Shift, tap Tab) — in this chat, not an editor."
+- For keys: "Press **Shift+Tab** (hold Shift, tap Tab), in this chat, not an editor."
 - If what they report doesn't match "you should see," use the lesson's
   **If-it-goes-wrong** line first; only improvise if that doesn't cover it. When
   they paste an error you don't recognize: read it with them, fix forward, and if
-  truly stuck, note the lesson as "skipped — <reason>" in the progress file and
+  truly stuck, note the lesson as "skipped: <reason>" in the progress file and
   continue. Never let one broken step end the tour.
 - Lost learner at any point → back up one step, re-give the exact keystroke,
   zero blame.
@@ -91,7 +91,7 @@ AI tools before: <yes|no> | Goal: <their words> | Project: <path>
 
 ## Session Zero (first run only)
 
-**Step 0.1 — intake.** Greet in ≤3 lines, then ask ALL of these in ONE message as
+**Step 0.1: intake.** Greet in ≤3 lines, then ask ALL of these in ONE message as
 a lettered list they can answer in shorthand ("1b 2a 3c…"). No other questions.
 
 1. What's your job, roughly? (a) engineer — I write code (b) analyst — I work
@@ -103,12 +103,12 @@ a lettered list they can answer in shorthand ("1b 2a 3c…"). No other questions
 5. Used an AI coding tool before? (a) yes (b) no
 6. In one line: what do you most want Claude Code to do for you?
 
-**Step 0.2 — project.** Look at the current directory yourself (one `ls`, nothing
+**Step 0.2: project.** Look at the current directory yourself (one `ls`, nothing
 deeper) and say what you see: "We're in `<dir>`, which looks like <one clause>.
 Should we do the tour here, or should I create a small practice project that fits
 your work?" Their real work beats the practice project when both are options.
 
-**Step 0.3 — practice project (if wanted).** Create `kickstart-practice/` in the
+**Step 0.3: practice project (if wanted).** Create `kickstart-practice/` in the
 current directory, matched to their role, ~4 files and under 100 lines total, with
 ONE planted bug and a check that fails because of it (`run_checks.py` on stdlib
 only — don't assume pytest). Tell them in one line what you made; never reveal
@@ -123,7 +123,7 @@ the bug.
   three formats) + an organizing/report script that mis-sorts one format + a
   check script that verifies the expected layout.
 
-**Step 0.4** — Create the progress file with the full profile, then start Lesson 1.
+**Step 0.4**: Create the progress file with the full profile, then start Lesson 1.
 
 ## Adapting to their profile
 
@@ -155,7 +155,7 @@ Concept (say in ~2 sentences): Claude Code reads files and runs commands itself.
 The #1 expensive chatbot habit is pasting code into the chat and re-explaining
 context every message — here, you point, and the agent goes and looks.
 
-- **Step 1.1** — Glance at top-level file/dir names only and offer 2–3 fill-in
+- **Step 1.1**: Glance at top-level file/dir names only and offer 2–3 fill-in
   question templates about THEIR code, e.g.:
   ```
   What does <file or dir> do? Read only what you need and explain in 5 lines.
@@ -164,8 +164,8 @@ context every message — here, you point, and the agent goes and looks.
   Where is <feature/word you saw in the names> handled? Show me the key file.
   ```
   Have them pick one, fill the blank, and send it as a normal message.
-- **Step 1.2** — Answer it properly: scoped reads, ≤8 lines, and one line narrating
-  HOW you scoped ("I read 2 of your 40 files — the names told me where to look").
+- **Step 1.2**: Answer it properly: scoped reads, ≤8 lines, and one line narrating
+  HOW you scoped ("I read 2 of your 40 files, and the names told me where to look").
 - **Check** — "Why is 'go read the billing folder and explain the retries' both
   cheaper AND better than pasting three files into a chat window?" (Looking for:
   no repeated pasting; the agent picks the right files; context stays clean.)
@@ -179,15 +179,15 @@ context every message — here, you point, and the agent goes and looks.
 Concept: CLAUDE.md is the project's standing instructions, loaded at the start of
 EVERY session — which makes it a per-session token tax. Great ones are short.
 
-- **Step 2.1** — Check yourself whether `CLAUDE.md` exists (one `ls`).
+- **Step 2.1**: Check yourself whether `CLAUDE.md` exists (one `ls`).
   - Missing → say: "Type this now, as a message in this chat:"
     ```
     /init
     ```
     "You'll watch me analyze the project and generate a CLAUDE.md. When it's done,
     say 'done'." (You will perform that generation — keep it lean from the start.)
-  - Exists → "You already have one — let's audit it," and go to 2.2.
-- **Step 2.2** — Show them the file's line count and its 3 most and least useful
+  - Exists → "You already have one, so let's audit it," and go to 2.2.
+- **Step 2.2**: Show them the file's line count and its 3 most and least useful
   lines, in your judgment. Rule of thumb: build/test commands, hard conventions, and
   real gotchas stay; philosophy, tutorials, and anything rarely needed goes. Propose
   specific cuts to get under ~60 lines. **They approve each cut before you edit.**
@@ -202,21 +202,21 @@ EVERY session — which makes it a per-session token tax. Great ones are short.
 Concept: plan mode makes Claude explore and propose before touching any file.
 Redirecting a plan costs cents; redirecting written code costs the code twice.
 
-- **Step 3.1** — Propose 2–3 genuinely small, safe, REAL changes you can see in
+- **Step 3.1**: Propose 2–3 genuinely small, safe, REAL changes you can see in
   their repo (a missing docstring, an unclear variable name, a small README gap —
   nothing structural). Let them pick one, or supply their own of similar size.
-- **Step 3.2** — "Press **Shift+Tab** (hold Shift, tap Tab) — in this chat. Look at
+- **Step 3.2**: "Press **Shift+Tab** (hold Shift, tap Tab), in this chat. Look at
   the bottom edge of the window: the mode label changes each press. Keep pressing
   until it says **plan**. Tell me what the label says now." You cannot see this —
   wait for their confirmation.
   - *If-it-goes-wrong:* label never says "plan" → have them tell you every label it
     cycles through, and work from that; some setups name modes differently.
-- **Step 3.3** — Give them the request to send, filled in for their chosen change:
+- **Step 3.3**: Give them the request to send, filled in for their chosen change:
   ```
   <the change>. Propose a plan first — which files, what edits, and how we'll
   verify it worked.
   ```
-- **Step 3.4** — Produce a short honest plan. Then teach the two questions to ask of
+- **Step 3.4**: Produce a short honest plan. Then teach the two questions to ask of
   ANY plan: (1) does it touch only the files you'd expect? (2) does it say how it
   verifies itself? Have them answer both about your plan. THEN, before they touch
   the approval prompt, warn them about it: "When you approve, it will also ask HOW
@@ -224,13 +224,13 @@ Redirecting a plan costs cents; redirecting written code costs the code twice.
   Pick **manually approve**. Auto-accept means my changes land without you reading
   them — I'll tell you in a minute when that's ever okay." They approve; implement;
   they accept each edit by hand this once.
-- **Step 3.5 — responsible use of the auto options.** ≤6 lines: auto-accept (and
+- **Step 3.5: responsible use of the auto options.** ≤6 lines: auto-accept (and
   the broader auto mode) trade YOUR review for speed. That trade is safe only when
   all three hold: the work is mechanical, you're on a clean branch with nothing
   uncommitted to lose, and there's a verification target that will catch mistakes.
   None of the three → manually approve. While you're learning → manually approve,
   always; speed you don't understand yet isn't speed.
-- **Step 3.6** — "Press **Shift+Tab** until the label is back to normal mode, and
+- **Step 3.6**: "Press **Shift+Tab** until the label is back to normal mode, and
   tell me when it is."
 - **Check** — "When would you NOT bother with plan mode? And when is auto-accept
   actually fine?" (Fine: trivial obvious changes; mechanical work + clean branch +
@@ -243,16 +243,16 @@ Redirecting a plan costs cents; redirecting written code costs the code twice.
 Concept: the context window is the scarcest resource. Long cluttered sessions cost
 more per message AND give worse answers. Fresh, focused sessions beat marathons.
 
-- **Step 4.1** — "Type this now, as a message in this chat:"
+- **Step 4.1**: "Type this now, as a message in this chat:"
   ```
   /context
   ```
   "A usage breakdown appears — I can't see it, only you can. Read me the rough
   total (the percentage or 'X of Y tokens')." Then explain in 2 lines what's
   filling it (this conversation, files read, tool results, CLAUDE.md).
-- **Step 4.2** — Same shape with `/usage` — "read me what this session has cost."
+- **Step 4.2**: Same shape with `/usage`: "read me what this session has cost."
   Tie it to the meter: every message from here costs more than the last one did.
-- **Step 4.3** — Teach the three cleanup tools in ≤6 lines:
+- **Step 4.3**: Teach the three cleanup tools in ≤6 lines:
   `/clear` = new task, keep nothing (the cheapest button in the product) ·
   `/compact keep <what matters>` = mid-task, history matters ·
   `/rewind` = the last approach was a dead end, go back to the checkpoint.
@@ -260,7 +260,7 @@ more per message AND give worse answers. Fresh, focused sessions beat marathons.
   `/clear` and restate fresh with what you learned.**
 - **Check (BEFORE the drill)** — "It's message 60, three abandoned approaches are
   sitting in history, and answers are getting worse. What do you do and why?"
-- **Step 4.4 — the live-fire drill.** After their answer: mark Lesson 4 done in the
+- **Step 4.4: the live-fire drill.** After their answer: mark Lesson 4 done in the
   progress file FIRST. Then say, in this order and nothing after it:
   "Now prove it. Type `/clear` — this whole conversation will vanish; that's the
   point. Then type `/kickstart:tour` — I'll be back in a fresh, cheap session and
@@ -277,18 +277,18 @@ more per message AND give worse answers. Fresh, focused sessions beat marathons.
 Concept: the biggest quality lever is a **verification target** — "done when the
 tests pass" — so Claude checks its own work instead of you eyeballing plausible code.
 
-- **Step 5.1** — Establish the check command. Practice project → it's the test
+- **Step 5.1**: Establish the check command. Practice project → it's the test
   suite you planted (one test currently fails). Their project → ask: "What command
   runs your tests or checks here? If none, give me any command that proves the app
   still works." Run it yourself once and show the current result honestly.
-- **Step 5.2** — Have them send a request WITH the target, template filled in:
+- **Step 5.2**: Have them send a request WITH the target, template filled in:
   ```
   Fix <the failing thing / small task>. Done when `<their check command>` passes.
   Run it yourself to confirm.
   ```
-  (Practice project: "one test in this project fails — find the bug and fix it"
+  (Practice project: "one test in this project fails, so find the bug and fix it"
   is the task; don't reveal the planted bug.)
-- **Step 5.3** — Do the work; show the check failing before and passing after, in
+- **Step 5.3**: Do the work; show the check failing before and passing after, in
   their own terminal output. Name the moment: "you never had to trust me — the
   test did the trusting."
 - **Check** — "Rewrite 'make the login better' into a verifiable request." (Any
@@ -304,12 +304,12 @@ tests pass" — so Claude checks its own work instead of you eyeballing plausibl
 Concept: not every task needs the biggest model at max effort. Mechanical work runs
 fine cheap and fast; gnarly debugging and design deserve the top tier.
 
-- **Step 6.1** — "Type `/model` — a picker opens (I can't see it). DON'T change
+- **Step 6.1**: "Type `/model`: a picker opens (I can't see it). DON'T change
   anything: read me which model is selected, then press **Esc** to close it."
   Explain the ladder in 2 lines: small/fast/cheap ↔ large/deep/expensive.
-- **Step 6.2** — Same shape with `/effort`: look, read it to me, Esc, change
+- **Step 6.2**: Same shape with `/effort`: look, read it to me, Esc, change
   nothing. One line: effort = how long it thinks before answering.
-- **Step 6.3** — "Name three real tasks from your week. For each: which tier and
+- **Step 6.3**: "Name three real tasks from your week. For each: which tier and
   why?" Correct gently — over-provisioning boilerplate and under-provisioning a
   gnarly bug are both wrong. The signal to upgrade: two failed cheap attempts.
 - **Check** — folded into 6.3.
@@ -320,13 +320,13 @@ fine cheap and fast; gnarly debugging and design deserve the top tier.
 Concept: Claude Code checkpoints as it works, and `/rewind` rolls back code and
 conversation — experiments are reversible. Small, frequent commits multiply that.
 
-- **Step 7.1** — Check `git status` yourself. Not a repo (practice project) →
+- **Step 7.1**: Check `git status` yourself. Not a repo (practice project) →
   `git init` + explain in one line. Their repo with unrelated staged work → don't
   touch it; narrate what you would commit and skip to 7.3.
-- **Step 7.2** — Offer to author a commit for what Lessons 3/5 changed. Show them
+- **Step 7.2**: Offer to author a commit for what Lessons 3/5 changed. Show them
   the exact commit message first; they approve; commit only tour-made changes.
   Point at the message: "reviewable, small, and safe to return to."
-- **Step 7.3** — "Type `/rewind` — a checkpoint list appears (I can't see it).
+- **Step 7.3**: "Type `/rewind`: a checkpoint list appears (I can't see it).
   Just LOOK: each entry is a point we could return to. Then press **Esc** —
   don't select anything, your work stays." One line on when you'd actually use it.
 - **Check** — "Why do small commits make an AI agent MORE useful, not just tidier?"
@@ -336,15 +336,15 @@ conversation — experiments are reversible. Small, frequent commits multiply th
 
 ## Lesson 8 — Graduate
 
-- **Step 8.1** — "Type `/kickstart:cheatsheet` and skim the card — that's your
+- **Step 8.1**: "Type `/kickstart:cheatsheet` and skim the card: that's your
   leave-behind." Then, in one line each: `/kickstart:coach` = ask "am I using this
   efficiently?" any time, in any session; `/kickstart:tour2` = Part 2, when daily
   use starts (CLAUDE.md hierarchy, permissions, your first skill, PR workflow,
   subagents); RESOURCES.md in the kickstart repo = the four links worth reading.
-- **Step 8.2 — graduation test** — "Explain Lesson 4 back to me in two sentences,
+- **Step 8.2: graduation test**: "Explain Lesson 4 back to me in two sentences,
   as if to a teammate." Hold the bar: it should mention that long sessions cost
   more AND perform worse, and name `/clear` as the reflex after finishing a task.
-- **Step 8.3** — Have them dictate "my next three things to try" ; write them into
+- **Step 8.3**: Have them dictate "my next three things to try" ; write them into
   the progress file, mark Lesson 8 done, and close warmly in ≤4 lines — no speech.
 - **Cost note** — Teaching a teammate these habits is the highest-leverage token
   ever spent.
